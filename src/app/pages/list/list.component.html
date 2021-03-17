@@ -1,0 +1,30 @@
+<div class="list-group mt-3">
+
+  <div class="item" *ngFor="let item of tasks">
+
+    <div class="list-group-item list-group-item-action" aria-current="true">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{item.name}}</h5>
+        <small class="openmenu" (click)="item.menu=!item.menu"><i class="fa fa-bars"></i></small>
+      </div>
+      <small class="text-muted">Creation date: {{ item.date | date:'short' }}</small>
+      <p class="mb-1">{{item.asigned}}</p>  
+
+    </div>
+
+    <div class="menu" *ngIf="item.menu">
+      <div class="menuitem editar" routerLink="/edit/{{ item.id }}"><i class="fa fa-pencil-square-o"></i> Edit</div>
+      <div class="menuitem editar" (click)="item.delete=!item.delete"><i class="fa fa-trash-o"></i> Delete</div>
+    </div>
+
+    <div class="deleteDiv alert alert-danger" *ngIf="item.delete">
+      <span class="w-100">Confirm delete this task?!</span>
+      <button type="button" (click)="deleteTask(item.id)" class="btn btn-sm btn-danger w-50">YES</button>
+      <button type="button" (click)="item.delete=!item.delete; item.menu=!item.menu" class="btn btn-sm btn-outline-danger w-50">NO</button>
+    </div>
+
+
+  </div>
+
+
+</div>

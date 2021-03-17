@@ -1,0 +1,60 @@
+
+<div class="container bg-light mt-3 pt-2 pb-5">
+<form (ngSubmit)="saveTask( forma )" #forma="ngForm">
+  <div class="form-group">
+    <label>Project name</label>
+    <input  type="text"
+            class="form-control"
+            name="name"
+            [ngModel]="task.name"
+            #name="ngModel">
+  </div>
+
+  <div class="form-group">
+    <label>Description</label>
+    <textarea   class="form-control"
+                name="description"
+                [ngModel]="task.description"
+                #description="ngModel"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label>Project manager</label>
+    <select   class="form-control"
+          name="manager"
+          [ngModel]="task.manager"
+          #manager="ngModel">
+      <option value="Juan">Juan</option>
+      <option value="Marcos">Marcos</option>
+      <option value="Carlos">Carlos</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Assigned to</label>
+    <select   class="form-control"
+              name="asignated"
+              [ngModel]="task.asignated"
+              #asignated="ngModel">
+      <option value="Pedro">Pedro</option>
+      <option value="Marcos">Marcos</option>
+      <option value="Pablo">Pablo</option>
+    </select>
+  </div>
+
+  <div  class="form-group">
+    <label>Status</label>
+    <select   class="form-control"
+              name="status"
+              [ngModel]="task.status"
+              #status="ngModel">
+      <option value="Pendiente">Pendiente</option>
+      <option value="Producción">Producción</option>
+      <option value="Cerrado">Cerrado</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-danger mt-5">Create project</button>
+
+</form>
+</div>

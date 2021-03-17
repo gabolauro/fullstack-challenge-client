@@ -1,0 +1,36 @@
+.item {
+	position: relative;
+	float: left;
+}
+
+.menu {
+	/*display: none;*/
+	background: #FFF;
+	border: 1px solid #E5E5E5;
+	position: absolute;
+	bottom: -20px;
+	right: 30px;
+	width: 200px;
+	z-index: 99;
+}
+
+.menuitem {
+	/*margin: 5px;*/
+	padding: 5px;
+	border-bottom: 1px solid #E5E5E5;
+
+}
+
+.menuitem:hover {
+	background: #E5E5E5;
+}
+
+.deleteDiv {
+	background: #F6E5E5;
+	border: 1px solid #E5E5E5;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	text-align: center;
+	z-index: 99;
+}
